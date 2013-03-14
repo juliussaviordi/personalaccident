@@ -1,0 +1,138 @@
+<head>
+<link rel="stylesheet" type="text/css" href="css.css">
+<script type="text/javascript" src="function.js" ></script>
+<script type="text/javascript">
+function goto(){
+	var form=document.form;
+	var halaman=document.getElementById('halaman').value;
+	form.action="content.html?page="+halaman;
+	form.submit();
+	return true;
+}
+
+
+</script>  
+
+<script type="text/javascript">
+ 
+        var isIE8 = window.XDomainRequest ? true : false;
+        var invocation = createCrossDomainRequest();
+        var url = 'http://www.internetjakarta.com/test/simple.php';       
+ 
+
+        function createCrossDomainRequest(url, handler)
+        {
+            var request;
+            if (isIE8)
+            {
+                request = new window.XDomainRequest();
+            }
+            else
+            {
+                request = new XMLHttpRequest();
+            }
+            return request;
+        }
+ 
+        function callOtherDomain()
+        {
+			/*
+            if (invocation)
+            {
+                if(isIE8)
+                {
+                    invocation.onload = outputResult;
+                    invocation.open("GET", url, true);
+                    invocation.send();
+                }
+                else
+                {
+                    invocation.open('GET', url, true);
+                    invocation.onreadystatechange = handler;
+                    invocation.send();
+                }
+            }
+            else
+            {
+                var text = "No Invocation TookPlace At All";
+                var textNode = document.createTextNode(text);
+                var textDiv = document.getElementById("textDiv");
+                textDiv.appendChild(textNode);
+            }
+			*/
+        }
+         
+        function handler(evtXHR)
+        {
+            if (invocation.readyState == 4)
+            {
+                if (invocation.status == 200)
+                {
+                    outputResult();
+                }
+                else
+                {
+                    //alert("Invocation Errors Occured");
+                }
+            }
+        }
+ 
+        function outputResult()
+        {
+            var response = invocation.responseText;
+            var textDiv = document.getElementById("textDiv");
+            textDiv.innerHTML += response;
+        }
+</script>
+ 
+
+
+</head>
+
+
+
+<body onLoad="callOtherDomain();">
+<div align="center">
+          <div class="logo">
+          </div>
+          <div id="textDiv">              
+          </div>    
+          
+          <p><span style="font-family:Georgia, 'Times New Roman', Times, serif;font-size:24px;color: #FF0  ;">PERSONAL ACCIDENT</span>
+</p>
+          <p>
+          <table><tr><td>
+            <a href="content.html?page=1"><script>document.write(title[1]);</script></a><br>
+            <a href="content.html?page=2"><script>document.write(title[2]);</script></a><br>
+            <a href="content.html?page=3"><script>document.write(title[3]);</script></a><br>
+            <a href="content.html?page=4"><script>document.write(title[4]);</script></a><br>
+            <a href="content.html?page=5"><script>document.write(title[5]);</script></a><br>
+            <a href="content.html?page=6"><script>document.write(title[6]);</script></a><br>
+            <a href="content.html?page=7"><script>document.write(title[7]);</script></a><br>
+            <a href="content.html?page=8"><script>document.write(title[8]);</script></a><br>
+          </td></tr></table>
+
+            
+           </p>
+          
+       
+
+          <p>&nbsp;</p>          
+          <form method="post" name="form" id="form">Halaman (1-9):
+              <input type="number" name="halaman" id="halaman" min="1" max="9" width="3">
+              <input name="submit" value="GO" type="submit" class="button" onClick="return goto();" />
+          
+          <p>&nbsp;</p>
+
+        
+          <p><a href="http://www.internetjakarta.com">www.asuransisejahtera.com</a></p>
+          
+          
+
+</div> 
+
+
+
+
+
+</body>

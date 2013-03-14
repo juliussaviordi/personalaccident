@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+body { 
+background-color: #333333;
+color: #FF0;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+a:link    {color: #FFF;text-decoration: none;}  /* unvisited link */
+a:visited {color: #FFF;text-decoration: none;}  /* visited link */
+a:hover   {color: #A7D346;text-decoration: none;}  /* mouse over link */
+a:active  {color: #C00;text-decoration: none;}  /* selected link */ 
+
+.logo {
+	background-color:#fff;
+	background-image:url(images/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top:100px;	
+}
+
+.titlebar {
+	background-color: #906   ;
+	color:#FFF;
+}
+
+
+.navbar {
+	background-color:#336633   ;
+	color:#FFF;
+}
+
+.image {
+	height: auto;
+	width: 100%; 
+}
+
+.imagezoom2x {
+	height: auto;
+	width: 200%; 
+}
+
+.imagezoom3x {
+	height: auto;
+	width: 300%; 
+}
+
+.imagezoom4x {
+	height: auto;
+	width: 400%; 
+}
+
+.imagezoom5x {
+	height: auto;
+	width: 500%; 
+}
+
+.imagevertical {
+	height: 92%;
+	width: auto; 
+}
+
+
